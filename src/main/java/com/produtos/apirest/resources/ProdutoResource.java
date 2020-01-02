@@ -31,5 +31,10 @@ public class ProdutoResource {
 	public Produto listaProdutoUnico(@PathVariable(value="id") long id){
 		return produtoRepository.findById(id);
 	}
-
+	
+	@PostMapping("/produto")
+	public Produto salvaProduto(@RequestBody Produto produto) {
+		return produtoRepository.save(produto);
+	}
+	
 }
